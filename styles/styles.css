@@ -243,3 +243,40 @@ body {
     font-size: 14px;
     line-height: 1.357;
 }
+
+.event {
+    padding: 40px 0 150px;
+}
+
+.reserve {
+    display: grid;
+    gap: 65px 11%;
+    grid-template-columns: 405px calc(89%-405px);
+    grid-template-areas: 
+    "checks scheme"
+    "order legend";
+    width: 100%;
+}
+
+.reserve__checks {
+    grid-area: "checks";
+}
+
+.reserve__scheme {
+    grid-area: "scheme";
+}
+
+.reserve__order {
+    grid-area: "order";
+}
+
+.reserve__legend {
+    grid-area: "legend";
+}
+
+.reserve > div {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #bc3324;
+    text-align: center;
+}
