@@ -1,0 +1,44 @@
+.about__container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1414px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.about__block2 {
+    display: grid;
+    grid-template-columns: 1fr 406px;
+    gap: 90px 65px;
+    grid-template-areas: 
+    "pic1 pic2"
+    "title pic2"
+    "text text";
+}
+
+.about__picture1 {
+    grid-area: pic1;
+}
+
+.about__title {
+    grid-area: title;
+    font-weight: 700;
+    font-size: 44px;
+}
+
+.about__picture2 {
+    grid-area: pic2;
+    align-self: flex-end;
+}
+
+.about__text {
+    grid-area: text;
+    margin: 0 80px 0 auto;
+    max-width: 870px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 18px;
+}
