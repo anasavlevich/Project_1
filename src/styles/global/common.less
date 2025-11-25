@@ -25,6 +25,16 @@ body {
     padding-top: 147px;
 }
 
+.show-event-popup {
+  body {
+    overflow: hidden;
+  }
+
+  #eventPP {
+    display: flex;
+  }
+}
+
 .main {
     flex: 1 0 auto;
 }
@@ -42,4 +52,31 @@ img {
     max-width: 100%;
     height: auto;
     object-fit: cover;
+}  	
+
+input,
+textarea,
+select {
+    box-shadow: none;
+    outline: none;
+    color: @black;
+    font-family: @font1;
+}
+
+textarea {
+    resize: none;
+}
+
+input,
+textarea {
+    &::placeholder {
+        color: #6C6C6C;
+  }
+}
+
+input:focus,
+textarea:focus {
+    &::placeholder {
+        color: transparent
+  }
 }
