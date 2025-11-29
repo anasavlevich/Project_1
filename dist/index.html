@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" <!--class="show-event-popup" -->
+<html lang="ru" class="show-event-popup">
 
 <head>
   <meta charset="UTF-8" />
@@ -44,7 +44,7 @@
         <div class="intro__form">
           <div class="intro__title3">Я хочу:</div>
           <div class="intro__btns">
-            <button class="btn intro__btn-event">Провести мероприятие</button>
+            <button class="btn btn--red">Провести мероприятие</button>
             <button class="btn intro__btn-patron">Стать арендатором</button>
           </div>
         </div>
@@ -92,6 +92,11 @@
           <article class="article-card listing__article-card">
             <a href="#" class="article-card__link">
               <picture class="article-card__pic">
+                <source media="(max-width: 450px)" type="imgage/webp" srcset="assets/images/blog/webp/blog_1.webp" />
+                <source media="(max-width: 450px)" srcset="assets/images/blog/blog_1.jpg" />
+                <source media="(max-width: 1169px)" type="imgage/webp" srcset="assets/images/blog/tablet/webp/blog_1.jpg" />
+                <source media="(max-width: 1169px)" srcset="assets/images/blog/tablet/blog_1.jpg" />
+                <source type="imgage/webp" srcset="assets/images/blog/webp/blog_1.webp" />
                 <img src="assets/images/blog/blog_1.jpg" alt="Theatre Photosession" class="article-card__img" />
               </picture>
             </a>
@@ -111,6 +116,11 @@
           <article class="article-card listing__article-card">
             <a href="#" class="article-card__link">
               <picture class="article-card__pic">
+                <source media="(max-width: 450px)" type="imgage/webp" srcset="assets/images/blog/webp/blog_2.webp" />
+                <source media="(max-width: 450px)" srcset="assets/images/blog/blog_2.jpg" />
+                <source media="(max-width: 1169px)" type="imgage/webp" srcset="assets/images/blog/tablet/webp/blog_2.jpg" />
+                <source media="(max-width: 1169px)" srcset="assets/images/blog/tablet/blog_2.jpg" />
+                <source type="imgage/webp" srcset="assets/images/blog/webp/blog_2.webp" />
                 <img src="assets/images/blog/blog_2.jpg" alt="VR" class="article-card__img" />
               </picture>
             </a>
@@ -130,6 +140,11 @@
           <article class="article-card listing__article-card">
             <a href="#" class="article-card__link">
               <picture class="article-card__pic">
+                <source media="(max-width: 450px)" type="imgage/webp" srcset="assets/images/blog/webp/blog_3.webp" />
+                <source media="(max-width: 450px)" srcset="assets/images/blog/blog_3.jpg" />
+                <source media="(max-width: 1169px)" type="imgage/webp" srcset="assets/images/blog/tablet/webp/blog_3.jpg" />
+                <source media="(max-width: 1169px)" srcset="assets/images/blog/tablet/blog_3.jpg" />
+                <source type="imgage/webp" srcset="assets/images/blog/webp/blog_3.webp" />
                 <img src="assets/images/blog/blog_3.jpg" alt="Rock Radio" class="article-card__img" />
               </picture>
             </a>
@@ -152,6 +167,108 @@
 
     </div>
   </main>
+  <div class="pp" id="eventPP">
+    <div class="pp__wrapper">
+      <div class="pp__sticky-close">
+        <button class="pp__x-btn x-btn">
+          <svg class="pp__x-icon" width="60" height="60">
+            <use xlink:href="assets/icons/symbols.svg#close"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="pp__container">
+        <h2 class="pp__title">Заполните форму
+          <br />и мы подберем площадку
+        </h2>
+        <form class="pp__form form">
+          <div class="form__list">
+            <div class="field form__field form__field--w50">
+              <h5 class="field__title">Формат мероприятия:</h5>
+              <div class="radio field__radio">
+                <label class="radio__item">
+                  <input class="radio__input" type="radio" name="format" value="seminar" checked />
+                  <span class="radio__mark"></span>
+                  <span class="radio__label">Мастер-класс/семинар</span>
+                </label>
+                <label class="radio__item">
+                  <input class="radio__input" type="radio" name="format" value="concert" />
+                  <span class="radio__mark"></span>
+                  <span class="radio__label">Концерт/выступление</span>
+                </label>
+                <label class="radio__item">
+                  <input class="radio__input" type="radio" name="format" value="exibit" />
+                  <span class="radio__mark"></span>
+                  <span class="radio__label">Выставка/показ</span>
+                </label>
+                <label class="radio__item">
+                  <input class="radio__input" type="radio" name="format" value="other" />
+                  <span class="radio__mark"></span>
+                  <span class="radio__label">Другое</span>
+                </label>
+              </div>
+            </div>
+            <div class="form__group form__group--w50">
+              <label class="field">
+                <h5 class="field__title">Планируемое количество посетителей:</h5>
+                <select class="form__field field__select" name="amount">
+                  <option value="20">до 20 человек</option>
+                  <option value="100">от 20 до 100 человек</option>
+                  <option value="500">от 100 до 500 человек</option>
+                  <option value="1000">более 500 человек</option>
+                </select>
+              </label>
+              <div class="field form__field form__field--m0">
+                <div class="field__date">
+                  <h5 class="field__title">Дата проведения:</h5>
+                  <div class="field__date-inputs">
+                    <input class="field__date-input" type="text" placeholder="ДД" />
+                    <input class="field__date-input" type="text" placeholder="ММ" />
+                    <input class="field__date-input field__date-input--year" type="text" placeholder="ГГГГ" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h5 class="form__title">Контактные данные:</h5>
+          <div class="form__list">
+            <label class="field form__field">
+              <span class="field__label">Имя*</span>
+              <input class="field__input" type="text" placeholder="Имя" name="name" required />
+            </label>
+            <label class="field form__field">
+              <span class="field__label">Фамилия*</span>
+              <input class="field__input" type="text" placeholder="Фамилия" name="last_name" required />
+            </label>
+            <label class="field form__field">
+              <span class="field__label">Телефон*</span>
+              <input class="field__input" type="tel" placeholder="+7 (___) ___ __ __" name="phone_number" required />
+            </label>
+            <label class="field form__field">
+              <span class="field__label">Email*</span>
+              <input class="field__input" type="email" placeholder="Email" name="email" required />
+            </label>
+          </div>
+          <label class="field">
+            <h6 class="field__title">Есть пожелания? Напишите нам:</h6>
+            <textarea class="field__textarea" name="Пожелания"></textarea>
+          </label>
+          <label class="check">
+            <input type="checkbox" name="agree" class="check__input" required checked />
+            <span class="check__mark"></span>
+            <span class="check__label check__label--s">
+              Я соглашаюсь с пользовательским соглашением и с политикой
+              использования персональных данных
+            </span>
+          </label>
+          <div class="form__btns">
+            <button type="submit" class="btn form__submit">Отправить</button>
+            <button type="button" class="form__close-btn">Закрыть</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <footer class="page-footer">FOOT</footer>
 </body>
 

@@ -1,23 +1,97 @@
 .reserve {
-  display: grid;
+  display: grid;  
   gap: 65px 11%;
-  grid-template-columns: 405px calc(89%-405px);
+  grid-template-columns: 405px 708px;
   grid-template-areas:
     "checks scheme"
     "order legend";
   width: 100%;
+  max-width: 1334px;
+  margin: 0 293px;
+
+  &__section-title {
+    margin-bottom: 31px;
+    align-self: flex-start;
+  }
 
   &__checks {
     grid-area: "checks";
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    .check {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
   }
 
   &__scheme {
     grid-area: "scheme";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__scheme-wrapper {
+    position: relative;
+    width: 100%;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-top: 51.15384%;
+    }
   }
 
   &__order {
     grid-area: "order";
+    display: flex;
+    flex-direction: column;
   }
+
+  &__tickets {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  &__qty {
+    &::after {
+      content: " " attr(data-caption) " | " attr(data-price);
+    }
+  }
+
+  &__sum {
+    &::after {
+      content: attr(data-currency);
+      margin-left: 4px;
+      font-size: 0.95em;
+    }
+  }
+
+  &__total {
+    &::before {
+      content: attr(data-caption);
+    }
+    &::after {
+      content: attr(data-currency);
+    }
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  &__submit {
+    width: 100%;
+    margin-top: 53px;
+}
 
   &__legend {
     grid-area: "legend";
@@ -27,6 +101,5 @@
 .reserve > div {
   box-sizing: border-box;
   padding: 10px;
-  background-color: #bc3324;
   text-align: center;
 }

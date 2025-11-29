@@ -20,6 +20,21 @@
         background-color: @black;
         color: @white;
     }
+
+  &__icon {
+    margin: auto;
+    color: @white;
+  }
+
+  &--red {
+    background-color: @red;
+    color: @white;
+    border: none;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    &:hover {
+      background-color: @red_dark;
+    }
+  }
 }
 
 .x-btn {
@@ -37,9 +52,5 @@
     background-color: @red_dark;
     cursor: pointer;
   }
-
-  &__icon {
-    margin: auto;
-    color: @white;
-  }
+  pointer-events: none;
 }

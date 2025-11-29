@@ -1,0 +1,60 @@
+.form {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 60px;
+  }
+
+  &__field,
+  &__group {
+    width: 100%;
+    margin: 0 0 36px;
+    max-width: 405px;
+    &--w50 {
+      width: calc(50%-30px);
+    }
+    &--m0 {
+        margin: 0;
+    }
+  }
+
+  &__title {
+    display: block;
+    margin: 0 0 10px;
+    color: @black;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.39;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  &__submit {
+    width: 100%;
+    max-width: 401px;
+    min-width: 240px;
+  }
+
+  &__close-btn {
+    margin: 0 auto;
+    min-width: 150px;
+    padding: 4px 0;
+    border: none;
+    background: transparent;
+    color: @black;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    text-decoration: underline;
+    transition: color 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      color: @red;
+    }
+  }
+}
