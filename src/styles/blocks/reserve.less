@@ -1,17 +1,19 @@
 .reserve {
-  display: grid;  
+  display: grid;
   gap: 65px 11%;
-  grid-template-columns: 405px 708px;
+  grid-template-columns: 405px calc(89%-405px);
   grid-template-areas:
     "checks scheme"
     "order legend";
   width: 100%;
   max-width: 1334px;
-  margin: 0 293px;
 
   &__section-title {
-    margin-bottom: 31px;
-    align-self: flex-start;
+    margin-bottom: 20px;
+    font-weight: 700;
+    &--s {
+      font-weight: 600;
+    }
   }
 
   &__checks {
@@ -26,8 +28,47 @@
     }
   }
 
-  &__scheme {
+  &__schemes {
     grid-area: "scheme";
+  }
+
+  &__scheme-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px 0;
+  }
+
+  &__scheme-title {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 162px;
+    min-height: 34px;
+    padding: 6px 56px;
+    background-color: @black;
+    color: @white;
+    font-family: @font2;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__scheme-wrapper {
+    position: relative;
+    width: 100%;
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__scene {
     position: absolute;
     top: 0;
     left: 0;
@@ -35,22 +76,13 @@
     height: 100%;
   }
 
-  &__scheme-wrapper {
-    position: relative;
-    width: 100%;
-
-    &::after {
-      content: "";
-      display: block;
-      width: 100%;
-      padding-top: 51.15384%;
-    }
-  }
-
   &__order {
     grid-area: "order";
     display: flex;
     flex-direction: column;
+    .reserve__section-title {
+      align-self: flex-start;
+    }
   }
 
   &__tickets {
@@ -64,7 +96,8 @@
 
   &__qty {
     &::after {
-      content: " " attr(data-caption) " | " attr(data-price);
+      content: " " attr(data-caption) " | " attr(data-price) " "
+        attr(data-currency);
     }
   }
 
@@ -91,10 +124,90 @@
   &__submit {
     width: 100%;
     margin-top: 53px;
-}
+  }
 
   &__legend {
     grid-area: "legend";
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__legend1,
+  &__legend2 {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0 9px;
+    margin-bottom: 15px;
+    pointer-events: none;
+  }
+
+  &__legend-red,
+  &__legend-black {
+    box-sizing: border-box;
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__legend-red {
+    background-color: @red;
+  }
+
+  &__legend-black {
+    background-color: @black;
+  }
+
+  &__legend-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    text-wrap: nowrap;
+    &--var {
+      &::after {
+        content: " " attr(data-price) " " attr(data-currency) " | "
+          attr(data-number) " " attr(data-caption);
+      }
+    }
+  }
+
+  &__legend-available {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 0 21px;
+  }
+
+  &__legend-circles {
+    display: block;
+    position: relative;
+    width: 100%;
+    font-size: 0;
+    text-decoration: none;
+  }
+
+  &__legend-booked {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0 29px;
+    margin-top: 14px;
+    pointer-events: none;
+  }
+
+  &__legend-gray {
+    box-sizing: border-box;
+    display: block;
+    width: 23px;
+    height: 23px;
+    border: none;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: @gray_dark;
   }
 }
 
